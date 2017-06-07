@@ -20,28 +20,28 @@ module.exports = {
                 }
               }]
           },
-        //   {
-        //     test: /\.scss$/,
-        //     use: [{
-        //         loader: 'style-loader'
-        //     }, {
-        //         loader: 'css-loader'
-        //     }, {
-        //         loader: 'sass-loader'
-        //     }]
-        //   },
-        //   {
-        //     test: /\.(png|svg)$/,
-        //     use: ['url-loader']
-        //   }
+          {
+            test: /\.scss$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader'
+            }, {
+                loader: 'sass-loader'
+            }]
+          },
+          {
+            test: /\.png$/,
+            use: ['url-loader']
+          }
       ]
     },
-    // plugins: [
-    //     new webpack.ProvidePlugin({
-    //         $: "jquery",
-    //         jQuery: "jquery",
-    //         "window.jQuery": "jquery",
-    //         "Tether": 'tether'
-    //     })
-    // ]
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            "Tether": 'tether'
+        })
+    ]
 };
