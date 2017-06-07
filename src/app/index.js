@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom'
 
 class Home extends React.Component {
     render() {
@@ -37,6 +37,8 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <h1>Karol Syta</h1>
+                    <NavLink exact path="/" home activeClassName="active">Home</NavLink>
+                    <NavLink exact path="/contact" home activeClassName="active">Contact</NavLink>
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/contact" component={Contact} />
