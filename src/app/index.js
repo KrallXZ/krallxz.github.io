@@ -1,35 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom'
-
-class Home extends React.Component {
-    render() {
-        return(
-            <div>
-                Just a first test.
-            </div>
-        )
-    }
-}
-
-class Contact extends React.Component {
-    render() {
-        return(
-            <div>Contact should be there.</div>
-        )
-    }
-}
-
-class Error404 extends React.Component {
-    render() {
-        return(
-            <div>
-                <h1>Error 404</h1>
-                <p>Not Found</p>
-            </div>
-        )
-    }
-}
+import Contact from './contact'
+import Home from './home'
+import Offer from './offer'
+import Portfolio from './portfolio'
+import Error404 from './errors/404'
 
 class App extends React.Component {
     render() {
@@ -39,9 +15,13 @@ class App extends React.Component {
                     <h1>Karol Syta</h1>
                     <NavLink exact to="/" home activeClassName="active">Home</NavLink>
                     <NavLink exact to="/contact" home activeClassName="active">Contact</NavLink>
+                    <NavLink exact to="/offer" home activeClassName="active">Offer</NavLink>
+                    <NavLink exact to="/portfolio" home activeClassName="active">Portfolio</NavLink>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/contact" component={Contact} />
+                        <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/offer" component={Offer} />
+                        <Route exact path="/portfolio" component={Portfolio} />
                         <Route component={Error404} />
                     </Switch>
                 </div>
